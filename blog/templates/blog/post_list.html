@@ -6,7 +6,15 @@
         <div>
             <h1><a href="">My first blog</a></h1>
             <p>Hello world! I just creat this blog and I hope that lightning strikes twice in the same place.</p>
-            <p>published: 06.03.2016, 23:45</p>
         </div>
+
+        {% for post in posts %}
+            <div>
+                <h1><a href="">{{ post.title }}</a></h1>
+                <p>published: {{ post.published_date }}</p>
+                <p>{{ post.text|linebreaks }}</p>
+            </div>
+        {% endfor %}
+
     </body>
 </html>
